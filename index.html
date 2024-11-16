@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valyuta Konvertoru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Valyuta Konvertoru</h1>
+        <div class="converter">
+            <input type="number" id="amount" placeholder="Məbləğ" value="1" />
+            <select id="currencyFrom">
+                <option value="RUB">RUB</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                
+            </select>
+            <span>=</span>
+            <input type="text" id="result" placeholder="Nəticə" readonly />
+            <select id="currencyTo">
+                <option value="USD">USD</option>
+                <option value="RUB">RUB</option>
+                <option value="EUR">EUR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+            <button id="convertBtn">Convert</button>
+        </div>
+        <div id="error" class="error"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
