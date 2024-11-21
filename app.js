@@ -13,8 +13,8 @@ let inp2 = document.querySelector(".result-input");
 let rate1 = document.querySelector(".rate1");
 let rate2 = document.querySelector(".rate2");
 let error = document.querySelector(".error-message");
-let menuToggle = document.querySelector('.menu-toggle');
-let navMenu = document.querySelector('.nav-menu');
+let menuToggle = document.querySelector(".menu-toggle");
+let navMenu = document.querySelector(".nav-menu");
 
 let left = "RUB";
 let right = "USD";
@@ -24,9 +24,9 @@ let c;
 //1 point
 function singlePoint(text) {
   let value = text.value;
-  let parts = value.split('.');
+  let parts = value.split(".");
   if (parts.length > 2) {
-    value = parts[0] + '.' + parts.slice(1).join('');
+    value = parts[0] + "." + parts.slice(1).join("");
 
   }
   text.value = value;
@@ -62,7 +62,7 @@ inp2.addEventListener("input", () => {
   }
   // 0 problem
   if ((/^0+/.test(inp2.value)) && (inp2.value.length > 1)) {
-    inp2.value = inp2.value.replace(/^0+/, '');
+    inp2.value = inp2.value.replace(/^0+/, "");
   }
 
   if (inp2.value.startsWith(".")) {
@@ -75,7 +75,8 @@ inp2.addEventListener("input", () => {
 //click buttons
 btnleft.forEach(button => {
   button.addEventListener("click", () => {
-    btnleft.forEach(btn => btn.classList.remove("btn1"));
+    btnleft.forEach(btn =>
+      btn.classList.remove("btn1"));
 
     button.classList.add("btn1");
     left = button.textContent;
@@ -85,7 +86,8 @@ btnleft.forEach(button => {
 
 btnright.forEach(button => {
   button.addEventListener("click", () => {
-    btnright.forEach(btn => btn.classList.remove("btn2"));
+    btnright.forEach(btn =>
+      btn.classList.remove("btn2"));
 
     button.classList.add("btn2");
     right = button.textContent;
@@ -94,10 +96,10 @@ btnright.forEach(button => {
 });
 //connect currency 
 function connectCurrency(a, b) {
-  fetch(`https://v6.exchangerate-api.com/v6/765192b8cac08627c70fec94/latest/${a}`)
+  fetch(`https://v6.exchangerate-api.com/v6/778c245d33b10b3a0c5c9596/latest/${a}`)
     .then(res => res.json())
     .then(response => {
-      let amount1 = response.conversion_rates[b]
+      let amount1 = response.conversion_rates[b];
       rate1.textContent = '1 ' + a + ' = ' + response.conversion_rates[b] + ' ' + b;
       console.log(response.base_code);
       console.log(response.conversion_rates[b]);
@@ -105,10 +107,10 @@ function connectCurrency(a, b) {
         inp2.value = (inp1.value * amount1).toFixed(5);
       }
     })
-  fetch(`https://v6.exchangerate-api.com/v6/765192b8cac08627c70fec94/latest/${b}`)
+  fetch(`https://v6.exchangerate-api.com/v6/778c245d33b10b3a0c5c9596/latest/${b}`)
     .then(res => res.json())
     .then(response => {
-      let amount2 = response.conversion_rates[a]
+      let amount2 = response.conversion_rates[a];
       rate2.textContent = '1 ' + b + ' = ' + response.conversion_rates[a] + ' ' + a;
       console.log(response.base_code);
       console.log(response.conversion_rates[a]);
@@ -142,8 +144,8 @@ window.addEventListener("offline", () => {
 window.addEventListener("online", hideError);
 
 // navbar
-menuToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
 });
 
 connectCurrency(left, right);
