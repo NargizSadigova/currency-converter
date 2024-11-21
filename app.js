@@ -49,9 +49,6 @@ inp1.addEventListener("input", () => {
   singlePoint(inp1);
   connectCurrency(left, right);
 })
-
-
-
 //only number , .
 inp2.addEventListener("input", () => {
   c = 2;
@@ -94,8 +91,26 @@ btnright.forEach(button => {
     connectCurrency(left, right);
   });
 });
-//connect currency 
+
+//connect currency and if for offline
 function connectCurrency(a, b) {
+  if (a == b) {
+    rate1.textContent = `1 ${a} = 1 ${b}`;
+    rate2.textContent = `1 ${b} = 1 ${a}`;
+    if (c == 1) {
+      inp2.value = inp1.value;
+    } else if (c == 2) {
+      inp1.value = inp2.value;
+    }
+    return;
+  }
+  else if (a != b) {
+    if (c == 1) {
+      inp2.value = "";
+    } else if (c == 2) {
+      inp1.value = "";
+    }
+  }
   fetch(`https://v6.exchangerate-api.com/v6/778c245d33b10b3a0c5c9596/latest/${a}`)
     .then(res => res.json())
     .then(response => {
@@ -138,7 +153,23 @@ function hideError() {
 window.addEventListener("offline", () => {
   error.style.display != "none";
   showError("Нет интернета! ");
-
+  while (!navigator.onLine) {
+    if (left == right) {
+      if (c == 1) {
+        inp2.value = inp1.value;
+      } else if (c == 2) {
+        inp1.value = inp2.value;
+      }
+      break;
+    } else if (left != right) {
+      if (c == 1) {
+        inp2.value = "";
+      } else if (c == 2) {
+        inp1.value = "";
+      }
+      break;
+    }
+  }
 });
 
 window.addEventListener("online", hideError);
@@ -149,7 +180,3 @@ menuToggle.addEventListener("click", () => {
 });
 
 connectCurrency(left, right);
-
-
-
-

@@ -50,32 +50,32 @@ h1 {
 }
 
 .btnright:hover {
-    background-color: #a032b3;
+    background-color: #833AE0;
     color: white;
 }
 
 .btnleft:hover {
-    background-color: #a032b3;
+    background-color: #833AE0;
     color: white;
 }
 
 /* .converter1 button:first-child,
     .converter2 button:nth-child(2) {
-      background-color: #a032b3;
+      background-color: #833AE0;
       color: white;
     } */
 .btn1 {
-    background-color: #a032b3;
+    background-color: #833AE0;
     color: white;
 }
 
 .btn2 {
-    background-color: #a032b3;
+    background-color: #833AE0;
     color: white;
 }
 
 .button-group button:hover {
-    background-color: #a032b3;
+    background-color: #833AE0;
     color: white;
 }
 
@@ -344,6 +344,7 @@ h1 {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        position: relative;
         background-color: #fff;
         padding: 10px 20px;
         width: 100vw;
@@ -353,7 +354,9 @@ h1 {
 
     .menu-toggle {
         display: flex;
-        margin-left: 50vw;
+        position: absolute;
+        top: auto;
+        right: 7vw;
     }
 
     .menu-toggle {
@@ -420,7 +423,7 @@ h1 {
     }
 
     .login-btn:hover {
-        background-color: #8a2be2;
+        background-color: #833AE0;
     }
 
     .error-message {
@@ -447,7 +450,6 @@ h1 {
         gap: 100px;
 
     }
-
 
     .currency-group {
         display: flex;
@@ -506,16 +508,10 @@ h1 {
 
     .input-section {
         gap: 70px;
-
-    }
-
-    .menu-toggle {
-        margin-left: 30vw;
     }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-
 
     h1 {
         width: 90vw;
@@ -528,9 +524,5 @@ h1 {
     .input-section {
         gap: 50px;
 
-    }
-
-    .menu-toggle {
-        margin-left: 15vw;
     }
 }
