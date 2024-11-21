@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     font-family: "Roboto", serif;
 }
 
-img {
+.navbar {
     width: 100%;
 }
+
 h1 {
     width: 750px;
     font-size: 47px;
@@ -18,96 +21,87 @@ h1 {
 
 }
 
-button{
-  
-        flex: 1;
-        padding: 10px;
-        text-align: center;
-        border: 0.5px solid #9f9f9f;
+.btnleft,
+.btnright {
 
-        background-color: #fff;
-        color: #9f9f9f;
-    
-        cursor:pointer;
-        padding:9px 23px;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border: 0.5px solid #9f9f9f;
 
-    }
-    .rub1,
-    .rub2 {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-    .gbp1,
-    .gbp2 {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
- 
-    /* .button:active {
-        position:relative;
-        top:1px;
-    } */
-     button:hover {
-        background-color: #a032b3;
-        color: white;
-     }
-    /* .converter1 button:first-child,
+    background-color: #fff;
+    color: #9f9f9f;
+
+    cursor: pointer;
+    padding: 9px 23px;
+
+}
+
+.rub1,
+.rub2 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.gbp1,
+.gbp2 {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btnright:hover {
+    background-color: #a032b3;
+    color: white;
+}
+
+.btnleft:hover {
+    background-color: #a032b3;
+    color: white;
+}
+
+/* .converter1 button:first-child,
     .converter2 button:nth-child(2) {
       background-color: #a032b3;
       color: white;
     } */
-     .btn1 {
-      background-color: #a032b3;
-      color: white;
-     }
-     .btn2 {
-        background-color: #a032b3;
-        color: white;
-       }
-    
-    .button-group button:hover {
-      background-color: #a032b3;
-      color: white;
-    }
-.converter1,.converter2 {
-    display: flex;
-
-}
-/* header {
-    background-color: #4CAF50;
+.btn1 {
+    background-color: #a032b3;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
 }
- */
 
-/* .currency-group {
+.btn2 {
+    background-color: #a032b3;
+    color: white;
+}
+
+.button-group button:hover {
+    background-color: #a032b3;
+    color: white;
+}
+
+.converter1,
+.converter2 {
     display: flex;
-    margin-left: 340px;
-} */
+
+}
+
+.navbar2 {
+    display: none;
+}
 
 .want {
     font-size: 12px;
     color: #9f9f9f;
     margin-right: 200px;
 }
+
 .have {
     font-size: 12px;
     color: #9f9f9f;
     margin-right: 230px;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
 .input-section {
     display: flex;
     justify-content: center;
@@ -118,24 +112,28 @@ input[type=number] {
 .currency-group {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 305px;
 }
 
+
 .amount-input,
 .result-input {
     border: none;
-  font-weight: bold;
-  margin-bottom: 10px;
-  height: 50px;
-  width: 60%;
-  font-size: 36px;
-  margin-left: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 60%;
+    font-size: 36px;
+    margin-left: 15px;
 }
+
 .amount-input:focus,
 .result-input:focus {
     outline: none;
 }
+
 .convert1,
 .convert2 {
     border: 1px solid #9f9f9f;
@@ -144,6 +142,7 @@ input[type=number] {
     height: 100px;
     margin-top: 20px;
 }
+
 .rate1,
 .rate2 {
     font-size: 12px;
@@ -151,22 +150,387 @@ input[type=number] {
     margin-left: 15px;
 }
 
-/* .amount-input, .result-input {
-    width: 100px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    text-align: right;
+.error-message {
+    height: 50px;
+    text-align: center;
+    margin-top: 80px;
 }
 
-.result-input {
-    background-color: #eee;
-    cursor: not-allowed;
+@media only screen and (max-width: 1400px) and (min-width: 1280px) {
+    .navbar {
+        width: 100%;
+    }
+
+    h1 {
+        width: 750px;
+        font-size: 45px;
+        margin-left: 310px;
+        margin-top: 80px;
+
+
+    }
+
+    .converter1,
+    .converter2 {
+        display: flex;
+
+    }
+
+    .want {
+        font-size: 12px;
+        margin-right: 180px;
+    }
+
+    .have {
+        font-size: 12px;
+        margin-right: 210px;
+    }
+
+    .input-section {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+
+    }
+
+    .currency-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 305px;
+    }
+
+    .amount-input,
+    .result-input {
+        border: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        height: 50px;
+        width: 60%;
+        font-size: 36px;
+        margin-left: 15px;
+    }
+
 }
 
-.conversion-info {
-    margin-top: 20px;
+@media only screen and (max-width: 1279px) and (min-width: 992px) {
+    .navbar {
+        width: 100%;
+    }
+
+    h1 {
+        width: 710px;
+        font-size: 40px;
+        margin-left: 300px;
+        margin-top: 65px;
+
+    }
+
+    .input-section {
+        display: flex;
+        justify-content: center;
+        gap: 170px;
+
+    }
 }
 
-.conversion-rate {
-    margin-bottom: 5px;
-} */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        width: 690px;
+        font-size: 45px;
+        margin-left: 250px;
+        margin-top: 60px;
+
+    }
+
+    .want {
+        font-size: 12px;
+        margin-right: 180px;
+    }
+
+    .have {
+        font-size: 12px;
+        margin-right: 210px;
+    }
+
+    .input-section {
+        gap: 100px;
+
+    }
+
+    .currency-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 305px;
+    }
+
+    .amount-input,
+    .result-input {
+        margin-bottom: 10px;
+        height: 50px;
+        width: 60%;
+        font-size: 36px;
+        margin-left: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 991px) and (min-width: 320px) {
+    .navbar {
+        display: none;
+    }
+
+    h1 {
+        width: 70vw;
+        font-size: 38px;
+        margin-left: 140px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+
+    }
+
+    .converter1,
+    .converter2 {
+        display: flex;
+
+    }
+
+    .want {
+        margin-bottom: 10px;
+    }
+
+    .have {
+        margin-bottom: 10px;
+    }
+
+    .input-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+    }
+
+    .currency-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .amount-input,
+    .result-input {
+        margin-bottom: 10px;
+        height: 50px;
+        width: 60%;
+        font-size: 36px;
+        margin-left: 15px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px 20px;
+        width: 100vw;
+        height: 50px;
+        background-color: #f5f5f6;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: 50vw;
+    }
+
+    .menu-toggle {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+
+    .nav-menu {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-menu li {
+        display: inline;
+    }
+
+    .nav-menu a {
+        text-decoration: none;
+        color: #4a4a4a;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-menu a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .login-btn {
+        background-color: white;
+        color: black;
+        padding: 5px 15px;
+        border-radius: 5px;
+        font-weight: 500;
+        border: none;
+    }
+
+    .login-btn:hover {
+        background-color: #8a2be2;
+    }
+
+    .error-message {
+        height: 50px;
+        text-align: center;
+        margin-top: 60px;
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+    h1 {
+        width: 80vw;
+        font-size: 33px;
+        margin-left: 90px;
+        margin-top: 35px;
+        margin-bottom: 10px;
+
+    }
+
+
+    .input-section {
+        gap: 100px;
+
+    }
+
+
+    .currency-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 305px;
+    }
+
+    .amount-input,
+    .result-input {
+        margin-bottom: 10px;
+        height: 50px;
+        width: 60%;
+        font-size: 36px;
+        margin-left: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        display: none;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        text-align: left;
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+    h1 {
+        width: 80vw;
+        font-size: 28px;
+        margin-left: 50px;
+        margin-top: 35px;
+
+    }
+
+    .input-section {
+        gap: 70px;
+
+    }
+
+    .menu-toggle {
+        margin-left: 30vw;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+
+    h1 {
+        width: 90vw;
+        font-size: 25px;
+        margin-left: 30px;
+        margin-top: 35px;
+
+    }
+
+    .input-section {
+        gap: 50px;
+
+    }
+
+    .menu-toggle {
+        margin-left: 15vw;
+    }
+}
