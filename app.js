@@ -111,7 +111,7 @@ function connectCurrency(a, b) {
       inp1.value = "";
     }
   }
-  fetch(`https://v6.exchangerate-api.com/v6/778c245d33b10b3a0c5c9596/latest/${a}`)
+  fetch(`https://v6.exchangerate-api.com/v6/f8b9170359669b98025f951c/latest/${a}`)
     .then(res => res.json())
     .then(response => {
       let amount1 = response.conversion_rates[b];
@@ -122,7 +122,7 @@ function connectCurrency(a, b) {
         inp2.value = (inp1.value * amount1).toFixed(5);
       }
     })
-  fetch(`https://v6.exchangerate-api.com/v6/778c245d33b10b3a0c5c9596/latest/${b}`)
+  fetch(`https://v6.exchangerate-api.com/v6/f8b9170359669b98025f951c/latest/${b}`)
     .then(res => res.json())
     .then(response => {
       let amount2 = response.conversion_rates[a];
